@@ -1,0 +1,36 @@
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\willIRC2.Form1.resources
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\willIRC2.Properties.Resources.resources
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\willIRC2.csproj.GenerateResource.Cache
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\bin\Debug\willIRC2.exe
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\bin\Debug\willIRC2.pdb
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\bin\Debug\Org.Mentalis.Security.dll
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\bin\Debug\Sharkbite.Thresher.dll
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\bin\Debug\Org.Mentalis.Security.xml
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\willIRC2.exe
+C:\Users\Will\Documents\Visual Studio 2008\Projects\willIRC2\willIRC2\obj\Debug\willIRC2.pdb
+F:\Home\Src\willIRC2\willIRC2\obj\Debug\ResolveAssemblyReference.cache
+F:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.Form1.resources
+F:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.Properties.Resources.resources
+F:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.csproj.GenerateResource.Cache
+D:\Home\Src\willIRC2\willIRC2\bin\Debug\willIRC2.exe
+D:\Home\Src\willIRC2\willIRC2\bin\Debug\willIRC2.pdb
+D:\Home\Src\willIRC2\willIRC2\bin\Debug\Org.Mentalis.Security.xml
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\ResolveAssemblyReference.cache
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.Form1.resources
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.Properties.Resources.resources
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.csproj.GenerateResource.Cache
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.exe
+D:\Home\Src\willIRC2\willIRC2\obj\Debug\willIRC2.pdb
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\willIRC2.Form1.resources
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\willIRC2.Properties.Resources.resources
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\ResGen.read.1.tlog
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\ResGen.write.1.tlog
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\bin\Debug\willIRC2.exe
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\bin\Debug\willIRC2.pdb
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\bin\Debug\Org.Mentalis.Security.dll
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\bin\Debug\Sharkbite.Thresher.dll
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\bin\Debug\Org.Mentalis.Security.xml
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\willIRC2.exe
+C:\Users\Will\Desktop\New folder (2)\willIRC2\willIRC2\obj\Debug\willIRC2.pdb
