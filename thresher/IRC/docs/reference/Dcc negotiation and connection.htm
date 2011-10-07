@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://www.kvirc.de/docu/doc_dcc_connection.html -->
+<HTML><HEAD><TITLE>Dcc negotiation and connection</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff>KVirc documentation<BR>
+<HR>
+
+<TABLE width="100%" bgColor=#a0a0a0>
+  <TBODY>
+  <TR>
+    <TD>
+      <H1>Dcc negotiation and connection</H1><A name=searchbody></A>Overview of 
+      the dcc internals </TD></TR>
+  <TR bgColor=#f0f0f0>
+    <TD>
+      <H2>What is DCC ?</H2><BR>'DCC' stands for Direct Client Connection: it is 
+      used to exchange data directly between two IRC clients (with no IRC server 
+      data routing).<BR>DCC itself is not a well-defined protocol , but rather a 
+      set of subprotocols with (more or less) standardized 
+      rules.<BR>Sub-protocols are also (historically) called <B>"DCC types"</B>; 
+      this term often leads to confusion and it will become clear later.<BR>Each 
+      subprotocol has two main parts: the <B>DCC negotiation</B> and the <B>DCC 
+      transfer</B>.<BR>The <B>DCC negotiation</B> part is used to request the 
+      <B>DCC transfer</B> and define its necessary parameters,<BR>while the 
+      <B>DCC transfer</B> part is the real data transfer between clients.<BR>The 
+      <B>DCC negotiation</B> requires a third entity that routes the negotiation 
+      data between clients; this is usually an IRC server.<BR><BR>
+      <H2>DCC Negotiation</H2><BR>This part of the protocol is the most tricky 
+      and difficult one, and is different for almost every DCC 
+      subprotocol.<BR>The "constant" scenario of the negotiation is more or less 
+      the following:<BR>There are two IRC clients connected to the same IRC 
+      network and they want to exchange some data in a direct client 
+      connection.<BR>Both clients know the other client by "nickname" only (and 
+      eventually by the host displayed by the IRC server, but this can not be 
+      trusted for several reasons), and can send text messages to each other by 
+      using the IRC network as data channel.<BR>To initiate a direct client 
+      connection , one of the clients must start listening on some port (this is 
+      called <B>passive client</B>) and the other must connect to that port on 
+      the first client's machine (this is the <B>active client</B>).<BR>Both 
+      clients must agree on who is the passive and who is the active client. The 
+      active client must also know the passive client's IP address and port (in 
+      order to be able to contact it).<BR>Finally , both clients must agree on 
+      the transfer type that has to be initiated.<BR>The negotiation exchanges 
+      these informations between clients by using IRC as channel and CTCP 
+      messages as encoding method.<BR>An example will make things 
+      clearer:<BR>DCC CHAT is the simplest (and most widely implemented) DCC 
+      subprotocol: it is used to exchange &lt;cr&gt;&lt;lf&gt; separated text 
+      data between clients.<BR>Assume that you want to estabilish a DCC CHAT 
+      connection to 'Sarah' that is actually connected to your IRC network (so 
+      she/he is an IRC user just like you). All you have to do is type sth as 
+      "/dcc chat Sarah" in your IRC client. The client will setup a listening 
+      socket on a random port choosen usually by the kernel of your OS. In this 
+      case YOU are the <B>passive client</B>, and Sarah is the active 
+      one.<BR>Once the socket is ready to accept connections, your client will 
+      send a <A href="http://www.kvirc.de/docu/doc_ctcp_handling.html">CTCP 
+      message</A> to Sarah using the IRC connection (and protocol) as 
+      channel:<BR>PRIVMSG Sarah :&lt;0x01&gt;DCC CHAT chat &lt;ip_address&gt; 
+      &lt;port&gt;&lt;0x01&gt;<BR>where &lt;ip_address&gt; is the address of the 
+      listening socket and &lt;port&gt; is the port that it has been bound to 
+      (these informations are obtained after the socket has been setup). Once 
+      Sarah has received the CTCP message, and agreed to connect, her (active) 
+      client will attempt to connect to the specified &lt;ip_address&gt; and 
+      &lt;port&gt; (eg. to your listening socket).<BR>Once the connection has 
+      been estabilished, it continues using the specific CHAT transfer 
+      protocol.<BR>Some IRC clients allow modifications of this 
+      procedure:<BR>First of all, the port to listen on can be specified by the 
+      user and not by the kernel; this is useful when the passive client is 
+      behind a firewall that "shades" some sets of ports. The ip address for the 
+      listening socket can be specified by the user as well (especially when the 
+      machine has more than one network interface).<BR>A more challenging trick 
+      is to listen on a specified ip address and port and notify different ones 
+      to the remote user (eg, &lt;ip_address&gt; and &lt;port&gt; parameters of 
+      the CTCP message are not the ones that the client is listening on). This 
+      is especially useful with "transparent proxy" firewalls that often are not 
+      transparent enough to allow the DCC connections. (If you have one of these 
+      firewalls you know what I'm talking about, otherwise just read on). KVIrc 
+      allows to avoid the usage of a third entity for the protocol negotiation 
+      too. You can setup a listening socket on a specified port and ip address 
+      without notyfying anyone of this. You can also manually connect to a 
+      specified port and ip address without having been notified of a DCC 
+      request.<BR><BR><BR>Is everything clear ?...I don't think so... my English 
+      is really too bad... <BR>
+      <H2>DCC transfer</H2><BR>The DCC transfer part is different for every DCC 
+      subprotocol: the only "constant" thing is that it happens over a direct 
+      client to client TCP connection.<BR><BR>
+      <H2>DCC subprotocols</H2><BR>There are two main standardized DCC 
+      subprotocols that are widely implemented in IRC clients: <B>DCC Chat</B> 
+      and <B>DCC Send</B>.<BR>DCC Chat is quite simple and the protocol is more 
+      or less completly defined.<BR>The DCC Send is a *real mess* (tm): the 
+      original definition was not very flexible so many IRC clients tried to 
+      enchance both the negotiation and the transfer, leading often to 
+      incompatible implementations. (I can remember of the Turbo File Transfer 
+      implemented by VIrc, the Send-Ahead enchancement implemented in many 
+      clients, the RESUME facility...)<BR>Many clients introduced new DCC 
+      subprotocols with non-standard implementations, leading again to client 
+      incompatibility.<BR>Some of the notable subprotocols are DCC Voice, DCC 
+      Draw, DCC Whiteboard...<BR><BR>
+      <H2>DCC Chat</H2><BR>This is the simpliest and most standardized DCC 
+      subprotocol. Almost any IRC client implements it.<BR>It is used to 
+      exchange lines of text between the two clients.<BR>The negotiation is 
+      quite simple: assume that client A wants to estabilish a DCC CHAT 
+      connection to client B. Client A sets up a listening socket and retrieves 
+      its adress (ip address and port).<BR>Once the socket is ready client A 
+      sends a CTCP request to B, in the following form:<BR><B>DCC CHAT chat 
+      &lt;ipaddress&gt; &lt;port&gt;</B><BR>Where &lt;ipaddress&gt; is a string 
+      rappresenting an unisnged integer that is the A socket's IP address in 
+      network byte order, and where &lt;port&gt; is a string rappresenting an 
+      unsigned integer that is the A socket's port.<BR>The meaning of the second 
+      "chat" string in the CTCP request is quite obscure: it was probably 
+      introduced to have the &lt;ipaddress&gt; as second parameter , as in the 
+      DCC Send subprotocol.<BR>Client B receives the CTCP , parses it , 
+      eventually asks the user for permission and connects to the specified ip 
+      address and port. The transfer protocol is quite simple: both clients can 
+      send text lines separated by &lt;cr&gt;&lt;lf&gt; pairs.<BR>Some clients 
+      use only &lt;lf&gt; as line terminator so the general idea is that one of 
+      &lt;cr&gt; &lt;cr&gt;&lt;lf&gt; or &lt;lf&gt; can be used as line 
+      terminator.<BR>As extension to the protocol , KVIrc allows 
+      &lt;ipaddress&gt; to be an IPV6 address in the standard hexadecimal 
+      notation: the connection will be made over the IPV6 protocol in this case 
+      (obviously if both clients support this feature).<BR>(I can't understand 
+      why the original DCC specification used the unsigned int format instead of 
+      the standard string rappresentation of the IP address...).<BR>KVIrc adds 
+      the Secure Sockets Layer to the DCC CHAT protocol. In this case the 
+      negotiation string becomes:<BR><B>DCC SCHAT chat &lt;ipaddress&gt; 
+      &lt;port&gt;</B><BR>where "SCHAT" stands for Secure CHAT.<BR>The external 
+      protocol is exactly the same but is built on a Secure Sockets Layer 
+      implementation (actually OpenSSL). The connection will be encrypted with a 
+      private key algorithm after a public key handshake.<BR><BR>
+      <H2>DCC Send</H2><BR>DCC Send is another standard subprotocol. Most 
+      clients implement this as well, many have tried to enchance it.<BR>The 
+      basic DCC Send protocol allows transferring a file from the requesting 
+      client to the receiving client.<BR>The requesting client (the one that 
+      sends the file) is always passive and the receiving client is always 
+      active.<BR>This is a huge protocol limitation since firewalled clients are 
+      often unable to accept incoming connections.<BR>The negotiation protocol 
+      is a bit complexier than DCC Chat: assume that client A wants to send the 
+      file F to client B.<BR>Client A sets up a listening socket and retrieves 
+      its ip address and port.<BR>Client A sends a CTCP request to client B in 
+      the following form:<BR><B>DCC SEND &lt;filename&gt; &lt;ipaddress&gt; 
+      &lt;port&gt; &lt;filesize&gt;</B><BR>&lt;ipaddress&gt; and &lt;port&gt; 
+      have the same semantics as in the DCC Chat 
+      subprotocol.<BR>&lt;filename&gt; is the name (without path!) of the file 
+      to be sent , and &lt;filesize&gt; is (yeah), the file size.<BR>Client B 
+      receives the CTCP , parses it , eventually asks the user for confirmation 
+      and connects to the specified ip address and port; the transfer then 
+      begins.<BR>The client A sends blocks of data (usually 1-2 KB) and at every 
+      block awaits confirmation from the client B, that when receiving a block 
+      should reply 4 bytes containing an unsigned number specifying the total 
+      size of the file received up to that moment.<BR>The transmission closes 
+      when the last acknowledge is received by client A.<BR>The acknowledges 
+      were meant to include some sort of coherency check in the transmission, 
+      but in fact no client can "recover" from an acknowledge error/desync: all 
+      of them just close the connection declaring the transfer as failed (the 
+      situation is even worse in fact: often acknowledge errors aren't even 
+      detected!).<BR>Since the packet-acknowledge round trip eats a lot of time 
+      , many clients included the "send-ahead" feature: the client A does NOT 
+      wait for the acknowledge of the first packet before sending the second 
+      one.<BR>The acknowledges are still sent , but just a reverse independent 
+      stream.<BR>This makes the DCC Send considerably faster.<BR>Since the 
+      acknowledge stream has non-zero bandwidth usage, no client can recover 
+      from an acknowledge error and having them as an independant stream is more 
+      or less like having no acknowledges, the "Turbo" ( :) ) extension has been 
+      added: client B will send no acknowledges and will just close the 
+      connection when he has received all the expected data.<BR>This makes the 
+      DCC Send as fast as FTP transfers.<BR>The "Turbo" extension is specified 
+      during the negotiation phase, bu using TSEND as DCC message type (instead 
+      of SEND).<BR>The "Turbo" extension is not widely implemented.<BR>Later 
+      implementations have added the support for resuming interrupted DCC Send 
+      transfers:<BR>Client A sets up the socket and sends the CTCP request as 
+      before.<BR>If client B discovers that the file has been partially received 
+      in a previous DCC Send session it sends a resume request in the following 
+      form:<BR><B>DCC RESUME &lt;filename&gt; &lt;port&gt; &lt;resume 
+      position&gt;</B><BR>Where &lt;port&gt; is the &lt;port&gt; sent in the DCC 
+      SEND request and &lt;resume position&gt; is the position in the file from 
+      where the transfer should start.<BR>Cilent A receives the request, parses 
+      it and eventually replies with:<BR><B>DCC ACCEPT &lt;filename&gt; 
+      &lt;port&gt; &lt;resume position&gt;</B><BR>Client B receives the ACCEPT 
+      message, connects to client A and the transfer initiates as before.<BR>The 
+      "Send-ahead" and "Turbo" extensions can obviously be used also in this 
+      case (But 'T' is NOT prepended to the RESUME and ACCEPT messages).<BR>The 
+      IPV6 extension can be used also in this subprotocol, so &lt;ipaddress&gt; 
+      can be also an IPV6 address in hexadecimal notation.<BR>KVIrc introduces 
+      the SSL extension also to DCC SEND. The protocol remains the same again 
+      but it is build over a Secure Sockets Layer implementation just like DCC 
+      CHAT.<BR>With SSL the negotiation string becomes:<BR><B>DCC SSEND 
+      &lt;filename&gt; &lt;ipaddress&gt; &lt;port&gt; 
+      &lt;filesize&gt;</B><BR>where "SSEND" stands for Secure SEND.<BR>The 
+      "turbo" extension can be combined with the SSL extension too. In this case 
+      the second parameter of the negotiation string must be "TSSEND" or 
+      "STSEND".<BR><BR>
+      <H2>DCC Recv</H2><BR>DCC Recv is the counterpart of DCC Send. This is a 
+      KVIrc extension and is not a standard yet.<BR>The purpose of this 
+      subprotocol will not be immediately clear, but keep reading on.<BR>It is 
+      used to request a file from another client: assume that Client A knows 
+      that client B has a specific file and is able/wants to send it.<BR>Client 
+      A sets up a listening socket, retrieves its address and port and then 
+      sends a CTCP request to client B in the following form:<BR><B>DCC RECV 
+      &lt;filename&gt; &lt;ipaddress&gt; &lt;port&gt; &lt;resume 
+      position&gt;</B><BR>where &lt;filename&gt; is the name of the requested 
+      file without path, &lt;ipaddress&gt; and &lt;port&gt; have the usual 
+      meaning and &lt;resume position&gt; is the position from that the transfer 
+      should start from.<BR>&lt;ipaddress&gt; can be an IPV6 address as 
+      well.<BR>Client B receives the CTCP message, parses it, looks for the file 
+      to send (in some unspecified way) and connects to the specified ip address 
+      and port. The transfer then begins just as in the DCC send, but in the 
+      inverse way: client B sends blocks of data to client A and client B sends 
+      back acknowledges.<BR>This subprotocol is useful in transferring data from 
+      clients that are behind a firewall and are not able to accept incoming 
+      connections (this is not possible with a normal DCC Send). In this case 
+      the client that receives the file is passive and the client that sends it 
+      is active (as opposite to DCC Send).<BR>The "Send ahead" extension can be 
+      used also in this case and the "Turbo" extension is activated by 
+      prepending a 'T' to the DCC message: "TRECV" instead of "RECV". The SSL 
+      extension is activated by prepending an 'S' to the DCC message: "SRECV" , 
+      "STRECV" or "TSRECV".<BR>This subprotocol has an implicit resume 
+      capability and thus has no need for RESUME and ACCEPT messages.<BR>DCC 
+      Recv requires the initiating (passive) client to know that the file to be 
+      transferred is avaiable on the B's side and probably also know the file 
+      size. This subprotocol does not specify how this information is obtained , 
+      but it will become clear soon that it can be obtained either manually 
+      (User B can simply tell the info to User A), or automatically (as in the 
+      DCC Rsend subprotocol (keep reading)).<BR><BR>
+      <H2>DCC RSend</H2><BR>DCC RSend stands for Reverse Send. This is a KVIrc 
+      extension to the SEND protocol to allow firewalled clients to send 
+      files.<BR>In fact, this is a "half" subprotocol , since it defines only a 
+      part of the DCC negotiation; the transfer is defined by another 
+      subprotocol (and specifically bu DCC Recv).<BR>The requesting client (the 
+      one that sends the file) is active and the receiving client is 
+      passive.<BR>Assume that client A wants to send a file to client B and that 
+      client A can not accept incoming connections.<BR>Client A sends a CTCP 
+      request to client B in the following form:<BR><B>DCC RSEND 
+      &lt;filename&gt; &lt;filesize&gt;</B><BR>Client B receives the request , 
+      parses it , eventually asks the user for confirmation , sets up a 
+      listening socket , retrieves its ip address and port and switches to the 
+      DCC Recv subprotocol by effectively sending the following CTCP 
+      message:<BR><B>DCC RECV &lt;filename&gt; &lt;ipaddress&gt; &lt;port&gt; 
+      &lt;resume position&gt;</B><BR>The rest of the transfer is defined by the 
+      DCC Recv subprotocol.<BR>The "Turbo" extension is again activated by 
+      prepending a 'T' to the RSEND string, so the initial CTCP will 
+      become:<BR><B>DCC TRSEND &lt;filename&gt; &lt;filesize&gt;</B><BR>The 
+      "SSL" extension is also activated by prepending an 'S' to the RSEND 
+      string. It can be again combined with the "turbo" extension. The 
+      negotiation parameter becomes then "SRSEND","TSRSEND" or 
+      "STRSEND".<BR>Easy , no ? :)<BR><BR>
+      <H2>DCC Get</H2><BR>This is again a "half" subprotocol in fact since it 
+      defines only a part of the negotiation for file transfers.<BR>It is also 
+      NON standard, since actually no client except KVIrc implements it 
+      (AFAIK).<BR>DCC Get is used to request a file from a remote client. Assume 
+      that client A wants to request a file from client B (and assume that 
+      client A knows that B has that file and wants to send it).<BR>Client A 
+      sends a CTCP message to client B in the following form:<BR><B>DCC GET 
+      &lt;filename&gt;</B><BR>Where &lt;filename&gt; is a name of a file without 
+      path.<BR>Client B receives the message , parses it , looks for an 
+      association of the &lt;filename&gt; to a real filesystem file and starts 
+      one of the two DCC File transfer subprotocols: DCC Send or DCC 
+      RSend.<BR>The client B should prefer the DCC Send method and choose DCC 
+      RSend only if it is not able to accept incoming connections.<BR>This 
+      subprotocol can be used by firewalled clients that can't accept 
+      connections but still want to request a file from another client: this one 
+      can fail only if both clients are firewalled (in this case no DCC transfer 
+      is possible at all).<BR>This subprotocol also does not need to "magically" 
+      know the file size: the size definition is found in the subprotocol that 
+      the remote client will choose.<BR>The association of &lt;filename&gt; with 
+      a real file on the B's machine is not explicitly defined by the 
+      subprotocol; KVIrc uses an internal "file-offer" table with a list of 
+      files that are available for download.<BR>The "turbo" and "SSL" extensions 
+      are activated as usual: "TGET" , "SGET" , "TSGET" and "STGET" are 
+      supported.<BR><BR>
+      <H2>DCC File transfers resume</H2><BR>DCC SEND : send a file, sender is 
+      passive, receiver is active (not good for firewalled senders)<BR>DCC RECV 
+      : receive a file, sender is active, receiver is passive (not good for 
+      firewalled receivers)<BR>DCC RSEND : send a file, sender is active , 
+      receiver is passive (not good for firewalled receivers)<BR>DCC GET : 
+      receive a file, sender is passive if not firewalled, receiver active if 
+      sender not firewalled (will fail only if both are firewalled)<BR>The 
+      "turbo" extension disables the stream of acknowledges and is activated by 
+      prepending the 'T' character to the DCC subprotocol name<BR>The "SSL" 
+      extension causes a Secure Sockets Layer to be used and is activated by 
+      prepending the 'S' character to the DCC subprotocol name<BR><BR>
+      <H2>DCC VOICE</H2><BR>DCC VOICE is a KVIrc extension. (Not really: there 
+      is a Windows client called VIrc that implements such a protocol but it is 
+      incompatible with KVIrc actually).<BR>DCC VOICE allows audio level 
+      communication between two clients: the audio stream is compressed with a 
+      particular codec.<BR>KVIrc currently supports the ADPCM (core support) and 
+      the GSM codec (if the libgsm is available on the target 
+      system).<BR><B>TODO: Finish the DCC VOICE doc :)</B> 
+      <H2>More tricks</H2><BR>KVIrc supports another "hack" to the DCC 
+      negotiation: it recognizes "XDCC" as negotiation CTCP parameter.<BR>This 
+      can be used to circumvent some irc client limitations (read mIrc) that 
+      will not allow you to send a /DCC GET since it is an unrecognized DCC 
+      type.<BR>"XDCC" has exactly the same meaning as "DCC" (at least in 
+      KVIrc).<BR></TD></TR></TBODY></TABLE>
+<HR>
+<A href="http://www.kvirc.de/docu/index.html">Main index</A>, <A 
+href="http://www.kvirc.de/docu/doc_documents.html">Miscelaneous documentation 
+index</A> 
+<HR>
+KVirc documentation<BR>Generated by root at Fri Jul 5 00:01:11 2002 
+</BODY></HTML>

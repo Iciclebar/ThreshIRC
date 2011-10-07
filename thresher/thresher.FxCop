@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.23" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>False</SharedProject>
+  <Stylesheet Apply="False">d:\net\microsoft fxcop 1.23\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <CompressProjectFile DefaultTargetCheck="True" DefaultRuleCheck="True">True</CompressProjectFile>
+  <PermitAnalysis>True</PermitAnalysis>
+  <SourceLookup>True</SourceLookup>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="C:\Documents and Settings\ahunter\My Documents\Visual Studio Projects\Thresher\IRC\bin\Release\Sharkbite.Thresher.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <RuleFiles>
+  <RuleFile Name="$(FxCopDir)\Rules\ComRules.dll" Enabled="False" AllRulesEnabled="False" />
+  <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="False">
+   <Rule Name="AvoidOutParameters" Enabled="True" />
+   <Rule Name="ConsiderReplacingMethodsWithProperties" Enabled="True" />
+   <Rule Name="ICollectionImplementationsHaveStronglyTypedMembers" Enabled="True" />
+   <Rule Name="EventsShouldBeUsed" Enabled="True" />
+   <Rule Name="EnumerationsShouldBeInt32" Enabled="True" />
+   <Rule Name="PointersAndMultiDimensionalArraysAreNotPassedAsParameters" Enabled="True" />
+   <Rule Name="AssembliesAreMarkedClsCompliant" Enabled="True" />
+   <Rule Name="IEnumeratorImplementationsHaveStronglyTypedMembers" Enabled="True" />
+   <Rule Name="ReferenceTypesShouldNotOverrideOperatorEquals" Enabled="True" />
+   <Rule Name="AssembliesShouldBeComVisibleAttributed" Enabled="True" />
+   <Rule Name="ConsiderReplacingRepetitiveArgsWithParameterArray" Enabled="True" />
+   <Rule Name="DefaultParametersAreNotUsed" Enabled="True" />
+   <Rule Name="ObsoleteAttributeOnTypeShouldProvideMessage" Enabled="True" />
+   <Rule Name="ReferenceTypesAreNotPassedAsByRefParameters" Enabled="True" />
+   <Rule Name="TypesDoNotHavePublicInstanceFields" Enabled="True" />
+   <Rule Name="IListImplementationsHaveStronglyTypedMembers" Enabled="True" />
+   <Rule Name="ObsoleteAttributeOnMemberShouldProvideMessage" Enabled="True" />
+   <Rule Name="SealedTypesDoNotDeclareVirtualMembers" Enabled="True" />
+   <Rule Name="SealedTypesDoNotDeclareProtectedMembers" Enabled="True" />
+   <Rule Name="AvoidNamespacesWithFewMembers" Enabled="True" />
+   <Rule Name="AvoidMarkingTypesObsolete" Enabled="True" />
+   <Rule Name="AvoidValueTypesPassedAsByRefParameters" Enabled="True" />
+   <Rule Name="AbstractTypesShouldNotHaveConstructors" Enabled="True" />
+   <Rule Name="TypesBelongToNamespaces" Enabled="True" />
+   <Rule Name="ISerializableTypesAreMarkedSerializable" Enabled="True" />
+   <Rule Name="EventHandlersReturnVoid" Enabled="True" />
+   <Rule Name="OnlyIntegralValuesOrStringsShouldBeUsedForIndexers" Enabled="True" />
+   <Rule Name="AttributesShouldHaveAccessorsForAllArguments" Enabled="True" />
+   <Rule Name="EnumerationsShouldBeFlagsAttributed" Enabled="True" />
+   <Rule Name="TypesHavingOnlyStaticMembersShouldBeSealed" Enabled="True" />
+   <Rule Name="ExternallyVisibleNestedTypesShouldNotBeUsed" Enabled="True" />
+   <Rule Name="TypesHavingOnlyStaticMembersShouldNotHaveConstructors" Enabled="True" />
+   <Rule Name="PropertiesShouldNotBeWriteOnly" Enabled="True" />
+   <Rule Name="ExceptionAndSystemExceptionTypesAreNotCaught" Enabled="True" />
+   <Rule Name="AssembliesHaveVersionNumbers" Enabled="True" />
+   <Rule Name="TypesAllocatingUnmanagedResourcesImplementIDisposable" Enabled="True" />
+   <Rule Name="EnumerationsShouldBeIntegralType" Enabled="True" />
+   <Rule Name="AssembliesHaveStrongNames" Enabled="True" />
+   <Rule Name="ExceptionsRequireMultipleConstructors" Enabled="True" />
+   <Rule Name="AttributesAreAttributeUsageAttributed" Enabled="True" />
+   <Rule Name="AvoidMarkingMembersObsolete" Enabled="True" />
+   <Rule Name="AvoidDefaultConstructorForStructures" Enabled="True" />
+   <Rule Name="IComparableImplementationsOverrideOperators" Enabled="True" />
+   <Rule Name="IComparableImplementationsOverrideEquals" Enabled="True" />
+   <Rule Name="InterfacesShouldNotBeEmpty" Enabled="True" />
+   <Rule Name="ExplicitMethodImplementationsInUnsealedClassesHaveVisibleAlternates" Enabled="True" />
+   <Rule Name="ConsiderHavingOnlyOneDimensionForIndexer" Enabled="True" />
+   <Rule Name="AddAndSubtractOverrideShouldHaveOperatorEqualsOverride" Enabled="True" />
+  </RuleFile>
+  <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+  <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="False">
+   <Rule Name="TypeNamesArePascalCased" Enabled="True" />
+   <Rule Name="CollectionNamesHaveCollectionSuffix" Enabled="True" />
+   <Rule Name="OnlyFlagEnumerationsShouldHavePluralNames" Enabled="True" />
+   <Rule Name="TypeNamesDoNotMatchNamespaceNames" Enabled="True" />
+   <Rule Name="EventArgsNamesHaveEventArgsSuffix" Enabled="True" />
+   <Rule Name="ParameterNamesDoNotMatchMemberNames" Enabled="True" />
+   <Rule Name="DelegateNamesDoNotHaveDelegateSuffix" Enabled="True" />
+   <Rule Name="InterfaceNamesHaveIPrefix" Enabled="True" />
+   <Rule Name="MemberNamesHaveShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="NamespaceNamesHaveShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="OnlyEventHandlerNamesHaveEventHandlerSuffix" Enabled="True" />
+   <Rule Name="OnlyEventArgsNamesHaveEventArgsSuffix" Enabled="True" />
+   <Rule Name="AttributeNamesHaveAttributeSuffix" Enabled="True" />
+   <Rule Name="TypeNamesDoNotHaveCPrefix" Enabled="True" />
+   <Rule Name="EventsDoNotHaveBeforeOrAfterPrefix" Enabled="True" />
+   <Rule Name="ParameterNamesDoNotHaveUnderscores" Enabled="True" />
+   <Rule Name="TypeNamesHaveOnlyShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="MemberNamesDifferByMoreThanCase" Enabled="True" />
+   <Rule Name="ParameterNamesDoNotMatchKeywords" Enabled="True" />
+   <Rule Name="OnlyStreamNamesHaveStreamSuffix" Enabled="True" />
+   <Rule Name="ParameterNamesDoNotContainLanguageSpecificTypeNames" Enabled="True" />
+   <Rule Name="OnlyDictionaryNamesHaveDictionarySuffix" Enabled="True" />
+   <Rule Name="TypeNamesDifferByMoreThanCase" Enabled="True" />
+   <Rule Name="OnlyExceptionNamesHaveExceptionSuffix" Enabled="True" />
+   <Rule Name="TypesImplementingInterfacesDoNotHaveImplSuffix" Enabled="True" />
+   <Rule Name="ParameterNamesDifferByMoreThanCase" Enabled="True" />
+   <Rule Name="ParameterNamesAreCamelCased" Enabled="True" />
+   <Rule Name="TypeNamesHaveShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="ParameterNamesHaveShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="MemberNamesArePascalCased" Enabled="True" />
+   <Rule Name="EventHandlerNamesHaveEventHandlerSuffix" Enabled="True" />
+   <Rule Name="ExceptionNamesHaveExceptionSuffix" Enabled="True" />
+   <Rule Name="ParameterNamesShouldHaveCompleteWords" Enabled="True" />
+   <Rule Name="OnlyAttributeNamesHaveAttributeSuffix" Enabled="True" />
+   <Rule Name="OnlyPermissionNamesHavePermissionSuffix" Enabled="True" />
+   <Rule Name="FlagEnumerationsShouldHavePluralNames" Enabled="True" />
+   <Rule Name="NamespaceNamesDoNotHaveUnderscores" Enabled="True" />
+   <Rule Name="NamespaceNamesHaveOnlyShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="OnlyCollectionNamesHaveCollectionSuffix" Enabled="True" />
+   <Rule Name="PermissionNamesHavePermissionSuffix" Enabled="True" />
+   <Rule Name="OnlyQueueNamesHaveQueueSuffix" Enabled="True" />
+   <Rule Name="StreamNamesHaveStreamSuffix" Enabled="True" />
+   <Rule Name="ParameterNamesHaveOnlyShortAcronymsAllCaps" Enabled="True" />
+   <Rule Name="TypeNamesDoNotHaveUnderscores" Enabled="True" />
+   <Rule Name="NamespaceNamesDifferByMoreThanCase" Enabled="True" />
+   <Rule Name="NamespaceNamesDoNotMatchKeywords" Enabled="True" />
+   <Rule Name="NamespaceNamesArePascalCased" Enabled="True" />
+   <Rule Name="OnlyStackNamesHaveStackSuffix" Enabled="True" />
+   <Rule Name="TypeNamesDoNotMatchKeywords" Enabled="True" />
+   <Rule Name="PropertyNamesShouldNotMatchGetMethodNames" Enabled="True" />
+   <Rule Name="ParameterNamesShouldNotContainTypeNames" Enabled="True" />
+   <Rule Name="DictionaryNamesHaveDictionarySuffix" Enabled="True" />
+   <Rule Name="ConditionNamesHaveConditionSuffix" Enabled="True" />
+   <Rule Name="EnumerationNamesDoNotHaveEnumSuffix" Enabled="True" />
+  </RuleFile>
+  <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+  <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+  <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="False">
+   <Rule Name="ExceptionsShouldNotBeThrownFromFilterBlocks" Enabled="True" />
+   <Rule Name="FinalizeMethodsHaveProtectedAccessLevel" Enabled="True" />
+   <Rule Name="PropertiesReturningCollectionsShouldBeReadOnly" Enabled="True" />
+   <Rule Name="DisposeMethodsRequireFinalizeMethod" Enabled="True" />
+   <Rule Name="WindowsFormsApplicationsAreMarkedStaThread" Enabled="True" />
+   <Rule Name="DisposeMethodsCallBaseClassDispose" Enabled="True" />
+   <Rule Name="ValueTypesWithRvaFieldsDoNotHaveNonPublicFields" Enabled="True" />
+   <Rule Name="CreateDomainIsNotCalledWithNullParameters" Enabled="True" />
+   <Rule Name="OperatorOverloadsHaveNamedAlternativeMethods" Enabled="True" />
+   <Rule Name="AvoidWebMethodAttributedServicedComponentMembers" Enabled="True" />
+   <Rule Name="OperatorEqualsOverridesRequireEqualsOverride" Enabled="True" />
+   <Rule Name="AssembliesHavePermissionRequests" Enabled="True" />
+   <Rule Name="EnumerationsShouldNotBeFlagsAttributed" Enabled="True" />
+   <Rule Name="MembersDifferByMoreThanReturnType" Enabled="True" />
+   <Rule Name="ResourceStringsShouldBeSpelledCorrectly" Enabled="True" />
+   <Rule Name="ValueTypesEqualsOverridesRequireOperatorEqualsOverride" Enabled="True" />
+   <Rule Name="PInvokeOnlyValidEntryPoints" Enabled="True" />
+   <Rule Name="SerializableTypesShouldHaveMagicConstructor" Enabled="True" />
+   <Rule Name="ConsiderCallingDataMembersDisposeMethod" Enabled="True" />
+   <Rule Name="AvoidNonConstantStaticFields" Enabled="True" />
+   <Rule Name="ResourceFilesAreBuiltUsingReleaseVersions" Enabled="True" />
+   <Rule Name="UseParamsForVariableArguments" Enabled="True" />
+   <Rule Name="InheritedPublicMembersDoNotChangeToPrivate" Enabled="True" />
+   <Rule Name="EqualsOverridesRequireGetHashCodeOverride" Enabled="True" />
+   <Rule Name="ConstructorsShouldNotCallBaseClassVirtualMethods" Enabled="True" />
+   <Rule Name="FinalizeMethodsCallBaseClassFinalize" Enabled="True" />
+   <Rule Name="AssembliesHaveValidStrongNames" Enabled="True" />
+   <Rule Name="ExceptionsAreMarkedSerializable" Enabled="True" />
+   <Rule Name="OperatorsHaveSymmetricalOverloads" Enabled="True" />
+  </RuleFile>
+ </RuleFiles>
+ <FxCopReport Version="1.23" LastAnalysis="2003-11-11 14:20:15Z">
+  <Targets>
+   <Target Name="C:\Documents and Settings\ahunter\My Documents\Visual Studio Projects\Thresher\IRC\bin\Release\Sharkbite.Thresher.dll">
+    <Messages>
+     <Message Level="CriticalError" Certainty="99" Status="Active" Created="2003-11-11 13:44:25Z">
+      <Rule TypeName="AssembliesHavePermissionRequests" />
+      <Resolution>
+       <Data>
+        <Items>
+         <Item>Sharkbite.Thresher</Item>
+        </Items>
+       </Data>
+      </Resolution>
+     </Message>
+    </Messages>
+    <Modules>
+     <Module Name="sharkbite.thresher.dll">
+      <Namespaces>
+       <Namespace Name="Sharkbite.Irc">
+        <Classes>
+         <Class Name="Connection">
+          <Methods>
+           <Method Name="ConnectClient(Org.Mentalis.Security.Ssl.SecureProtocol):System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Connection.ConnectClient</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="ExtractProperties():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Connection.ExtractProperties</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+             <Message Level="Error" Certainty="95" Status="Excluded" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="IFormatProviderShouldBePassed" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Connection.ExtractProperties()</Item>
+                 <Item>
+
+Int32.Parse(System.String)</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="SendAutomaticReply(System.Text.StringBuilder):System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Connection.SendAutomaticReply</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="SendCommand(System.Text.StringBuilder):System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Connection.SendCommand</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="CtcpListener">
+          <Methods>
+           <Method Name="TokenizeMessage(System.String):System.String[]">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>CtcpListener.TokenizeMessage</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="DccChatSession">
+          <Methods>
+           <Method Name="Connect():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccChatSession.Connect</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="Listen():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccChatSession.Listen</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="ReceiveMessages():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccChatSession.ReceiveMessages</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="SendMessage(System.String):System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccChatSession.SendMessage</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="DccFileSession">
+          <Methods>
+           <Method Name="Cleanup():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccFileSession.Cleanup</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="Download():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccFileSession.Download</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="Listen():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccFileSession.Listen</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="Upload():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccFileSession.Upload</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+           <Method Name="UploadLegacy():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>DccFileSession.UploadLegacy</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="Identd">
+          <Methods>
+           <Method Name="Run():System.Void">
+            <Messages>
+             <Message Level="CriticalError" Certainty="95" Status="Active" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Identd.Run</Item>
+                 <Item>
+
+catch(Exception) {...}</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="Listener">
+          <Methods>
+           <Method Name="ParseReply(System.String[]):System.Void">
+            <Messages>
+             <Message Level="Error" Certainty="95" Status="Excluded" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="IFormatProviderShouldBePassed" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Listener.ParseReply(System.String[])</Item>
+                 <Item>
+
+Convert.ToInt64(System.String)</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="NameGenerator">
+          <Methods>
+           <Method Name="MakeName():System.String">
+            <Messages>
+             <Message Level="Error" Certainty="95" Status="Excluded" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="CultureInfoShouldBePassed" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>NameGenerator.MakeName()</Item>
+                 <Item>
+
+Char.ToUpper(Char)</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="Sender">
+          <Methods>
+           <Method Name="UnAway():System.Void">
+            <Messages>
+             <Message Level="Error" Certainty="75" Status="Excluded" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="MemberNamesHaveShortAcronymsAllCaps" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>Sender.UnAway</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+         <Class Name="TextColor">
+          <Methods>
+           <Method Name="MakeColor(System.String,Sharkbite.Irc.MircColor):System.String">
+            <Messages>
+             <Message Level="Error" Certainty="95" Status="Excluded" Created="2003-11-11 13:44:25Z">
+              <Rule TypeName="IFormatProviderShouldBePassed" />
+              <Resolution>
+               <Data>
+                <Items>
+                 <Item>TextColor.MakeColor(System.String,Sharkbite.Irc.MircColor)</Item>
+                 <Item>
+
+Int32.ToString()</Item>
+                </Items>
+               </Data>
+              </Resolution>
+             </Message>
+            </Messages>
+           </Method>
+          </Methods>
+         </Class>
+        </Classes>
+        <ValueTypes>
+         <ValueType Name="ConnectionArgs">
+          <Messages>
+           <Message Level="Warning" Certainty="75" Status="Excluded" Created="2003-11-11 13:44:25Z">
+            <Rule TypeName="ConsiderOverridingEqualsAndOperatorEqualsOnValueTypes" />
+            <Resolution>
+             <Data>
+              <Items>
+               <Item>ConnectionArgs</Item>
+              </Items>
+             </Data>
+            </Resolution>
+           </Message>
+          </Messages>
+         </ValueType>
+        </ValueTypes>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AssembliesHavePermissionRequests">
+    <Name>Assemblies specify permission requests</Name>
+    <Description>Permission requests prevent security exceptions from being thrown after code in an assembly has already begun executing. With permission requests, the assembly does not load if it has insufficient permissions. This rule will generate a message if you have specified a permission request incorrectly, or incompletely. If you have specified requests but FxCop reports a message from this rule, use the PermView.exe tool to view the security permissions in the assembly. An unenforceable permission appears as an empty permission set.</Description>
+    <LongDescription>You should add attributes specifying what permissions your assembly will demand, might demand, and what permissions it does not want granted.  For example, the following attribute indicates that an assembly will, at minimum, require read access to the USERNAME environment variable: [assembly:EnvironmentPermissionAttribute(SecurityAction.RequestMinimum,
+Read="USERNAME")]. To specify permissions that the assembly might demand, use SecurityAction.RequestOptional. To specify permissions that the assembly must not be granted, use SecurityAction.RequestRefuse.</LongDescription>
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/UsageRules/AssembliesPermissionRequests.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="99">CriticalError</MessageLevel>
+    <File Name="UsageRules.dll" Version="1.23.0.0" />
+   </Rule>
+   <Rule TypeName="ConsiderOverridingEqualsAndOperatorEqualsOnValueTypes">
+    <Name>Consider overriding Equals and the equality operator on value types</Name>
+    <Description>The default System.ValueType implementation might not perform as well as a custom implementation.</Description>
+    <LongDescription />
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/Performance/EqualsAndOperatorEqualsOnValueTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.23.0.0" />
+   </Rule>
+   <Rule TypeName="CultureInfoShouldBePassed">
+    <Name>CultureInfo should be passed</Name>
+    <Description>If an overload exists that takes a System.Globalization.CultureInfo argument, it should always be called in favor of an overload that does not.</Description>
+    <LongDescription>The CultureInfo type contains culture-specific information required for performing numeric and string operations, such as casing, formatting, and string comparisons. In scenarios where conversion and parsing behavior should never change between cultures, specify CultureInfo.InvariantCulture.</LongDescription>
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/Globalization/CultureInfoPassed.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="GlobalizationRules.dll" Version="1.23.0.0" />
+   </Rule>
+   <Rule TypeName="ExceptionAndSystemExceptionTypesAreNotCaught">
+    <Name>System.Exception and System.SystemException are not caught</Name>
+    <Description>You should not catch Exception or SystemException.</Description>
+    <LongDescription>Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</LongDescription>
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/DesignRules/ExceptionAndSystemException.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.23.0.0" />
+   </Rule>
+   <Rule TypeName="IFormatProviderShouldBePassed">
+    <Name>IFormatProvider should be passed</Name>
+    <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not.</Description>
+    <LongDescription>Some methods in the common language runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture.</LongDescription>
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/Globalization/IFormatProviderPassed.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="GlobalizationRules.dll" Version="1.23.0.0" />
+   </Rule>
+   <Rule TypeName="MemberNamesHaveShortAcronymsAllCaps">
+    <Name>Member name acronyms with two characters are all capitals</Name>
+    <Description>Two character acronyms should be in upper-case. For example, use System.IO instead of System.Io.</Description>
+    <LongDescription> Although it may be common practice for some two character acronyms to not be fully capitalized, messages from this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</LongDescription>
+    <GroupOwner>MS FxCopDev</GroupOwner>
+    <DevOwner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules/NamingRules/MemberNamesShortAcronymsCaps.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.23.0.0" />
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

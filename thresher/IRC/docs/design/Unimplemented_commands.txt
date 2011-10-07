@@ -1,0 +1,22 @@
+These are commands that are either useless (like SUMMON) or infrequently used.
+
+ Commands
+-----------------
+- STATS
+- SUMMON
+
+Admin
+-----------
+- TRACE
+- OPER
+- SQUIT
+- REHASH
+- DIE
+- RESTART
+- CONNECT
+
+Service
+-----------------
+- SERVLIST
+- SQUERY
+

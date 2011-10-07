@@ -1,0 +1,47 @@
+Thresher DCC
+-----------------
+
+1. Introduction
+
+Thresher supports the four most popular DCC commands: Chat, Send, Accept, and Resume. It also
+supports one of the extension protocols: Get. Thresher is fully compatible with all the major IRC
+clients for Windows, Mac, and Unix. 
+
+Some newer clients can use the 'send-ahead' or turbo mode for file exchanges. This mode is much
+faster then legacy mode transfers but is not supported by all clients, for example neither mIRC nor Ircle 
+support it. Thresher supports both legacy and turbo mode file transfers.
+
+
+2. Compatibility
+
+Thresher was tested against the following clients:
+  
+Client		Platform	Notes
+------		---------	----------------------------------------------------------
+mirc		Windows		No turbo mode or get support. Uses small file receive buffer.
+bersirc		Windows		Supports turbo mode but not get. Unstable on file receives.
+virc		Windows		Supports turbo mode but not get. 
+bitchx		Unix		No turbo mode or get support. Has own turbo mode which Thresher understands.
+ircle		Mac		No turbo mode or get support. Solid DCC implementation.
+
+
+3. Command Format
+
+Supported commands:
+- Chat: DCC CHAT CHAT ip port
+- Send: DCC SEND filename ip port filesize [T]
+- Resume: DCC RESUME filename port position
+- Accept: DCC ACCEPT filename port position
+- Get: DCC GET filename [T]
+
+Parameter key:
+- ip: This is the IP address as a 4 byte unsigned integer in network byte order.
+- port: TCP/IP port.
+- filename: The name of the file without path and with no spaces.
+- filesize: A number representing size of the file in bytes.
+- T: Optional. Use Turbo mode for file transfers.
+- position: Where in the file to restart the transfer. The position is specified in bytes  
+		
+		
+
+

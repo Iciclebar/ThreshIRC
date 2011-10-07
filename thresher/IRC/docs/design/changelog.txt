@@ -1,0 +1,87 @@
+1.0beta1 12 May 2002
+-----------------------------
+* First stable beta release intended for widespread user testing.
+* API is also stable and should not change for the eventual 1.0 release.
+
+1.0beta2 - 22 May 2002
+-----------------------------
+* Added very simple EchoBot example 
+* Changed LogBot into a multi-connection, multi-channel bot
+* Connection will now handle 'nick taken' errors automatically
+* Included Visual Studio project files along with source
+* Added Identd server
+
+1.0beta3 - 30 June 2002
+-----------------------------------
+* Cleaned up the connect/disconnect code in Connection. There are 3 ways
+   the connection can close:
+   1. By User Request -> connection.Disconnect() 
+       - Events raised: OnDisconnecting() then OnDisconnected()
+   2. IRC Server closes connection (it goes down or you were bad and got kicked)
+       - Events raised: OnError() with code -1 then OnDisconnected()
+   3. Network connection fails ( your modem hangs up, someone kicks the cable, etc..)
+		- Events raised: OnError() with code -1 then OnDisconnected()
+* Added a PrivateAction event/command
+* Added the ability to send arbitrary messages to the IRC server via Sender.Raw()
+
+1.0beta4 - 09 September 2002
+--------------------------------------
+* Added full DCC chat and file send support.
+* Now supports encrypted connections. Requires to Mentalis.org secure socket
+   library. API's for encrypted connections to the IRC server, DCC Chat, and DCC file transfers.
+* Changed text stream encoding from UTF to Default due to a possible bug.
+  (Thanks to Llewellyn for pointing this one out).
+* Added 2 events to Connection (OnRawMessageReceived,OnRawMessageSent)
+  that allow developers to see the raw messages as they are sent and received.
+* Thresher can be easily extended with the new custom parser API.
+* Replaced log4net classes with built-in Debug class. log4net.dll no longer necessary.
+* Upgraded test to 2.0 version of NUnit
+
+  1.0beta5 - 27 December 2002
+  ----------------------------------------
+  * Fixed DccChatSession close bug.
+  * Fixed incorrect connection close Exceptions
+  * Fixed Part message bug
+  * Added a makefile to build Thresher (Thanks Alp)
+  * Added Version command
+  * Added ability to listen to registration messages (OnRegistrationInfo)
+  * Simplified Identd API
+  * Cleaned up Debug print statements
+  * Tightened up Dcc classes
+  * Removed SSL (temporarily)
+  
+  1.0 - 08 March 2003
+  ----------------------------------
+ * Changed license to GPL.
+ * Removed ability to listen to registration messages (OnRegistrationInfo). OnReply already suitable.
+ * Rewrote documentation. Added examples to documentation.
+ * Fixed serious connection registration bug.
+ * PART,KICK and other method signatures changed to accomodate multiple targets at once.
+ * Renamed  'RFC' classes to .Net convention 'Rfc'.
+ * Changed the way random nicknanmes are generated. New NameGenerator class.
+ * Add a filtered stream reader to improves library security.
+ * Made Rfc2812Codes into Enums. And renamed them 'ReplyCode'.
+ 
+ 1.1 - 16 November 2003
+ ------------------------------------------
+ * Fixed bug that removed multiple spaces from messages.
+ * Fixed bug that incorrectly parsed channel and user modes (thank you Klemen and Xedecimal).
+ * Add SSL connection to the IRC server. (Windows only)
+ * Fixed rare Identd shutdown bug (thank you Klemen).
+ * Added mIRC color methods.
+ * Removed SafeReader. Not a bad idea but it needs more work.
+ * Assembly now has a strong name.
+ 
+  1.2 - 05 July 2004
+ ------------------------------------------
+  * Fixed bug that caused a problem for non-UTF char sets in Connection and DccChatSession. (thanks Alex)
+  * Add a text encoding property to Connection. (thanks Alex)
+  * Changed OnNames() final message to include the channel name. Duh. (thanks Thiago) 
+  * Removed length check for Nicks. No IRC server observes the strict RFC rules so why should I?
+  * Removed regions in source code. They just got on my nerves.
+  * DccChatSession objects now use the text encoding property of the Connection object passed to 
+     it as part of the DccUserInfo. (Did you get all that?)
+  * Added a new constructor for Connection that takes the text encoding as a parameter.
+  * Added fix for Disconnect() bug. (thanks Thomas)
+  * Added support for 'h' Half-Op mode.
+  * Added support for Kill command.

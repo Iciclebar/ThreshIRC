@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRC", "IRC.csproj", "{EAA2EBA6-4510-498D-9FF2-267FF825FD94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "..\Samples\Examples.csproj", "{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{B2DF3526-5617-4DA7-BA5F-A81074583D9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTest", "..\MultiTest\MultiTest.csproj", "{7CD55379-5C17-4CCE-B5B7-B1908373917C}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Debug_SSL
+		ConfigName.2 = Release
+		ConfigName.3 = SSL
+		ConfigName.4 = Trace
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Debug.ActiveCfg = Debug|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Debug.Build.0 = Debug|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Debug_SSL.ActiveCfg = Debug_SSL|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Debug_SSL.Build.0 = Debug_SSL|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Release.ActiveCfg = Release|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Release.Build.0 = Release|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.SSL.ActiveCfg = SSL|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.SSL.Build.0 = SSL|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Trace.ActiveCfg = Trace|.NET
+		{EAA2EBA6-4510-498D-9FF2-267FF825FD94}.Trace.Build.0 = Trace|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Debug.ActiveCfg = Debug|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Debug.Build.0 = Debug|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Debug_SSL.ActiveCfg = Debug_SSL|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Debug_SSL.Build.0 = Debug_SSL|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Release.ActiveCfg = Release|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Release.Build.0 = Release|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.SSL.ActiveCfg = SSL|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.SSL.Build.0 = SSL|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Trace.ActiveCfg = Release|.NET
+		{0477243B-441B-4BAE-BED3-ACA52B2C7E1A}.Trace.Build.0 = Release|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Debug.ActiveCfg = Debug|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Debug.Build.0 = Debug|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Debug_SSL.ActiveCfg = Debug_SSL|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Debug_SSL.Build.0 = Debug_SSL|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Release.ActiveCfg = Release|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Release.Build.0 = Release|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.SSL.ActiveCfg = SSL|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.SSL.Build.0 = SSL|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Trace.ActiveCfg = Release|.NET
+		{B2DF3526-5617-4DA7-BA5F-A81074583D9C}.Trace.Build.0 = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Debug.ActiveCfg = Debug|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Debug.Build.0 = Debug|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Debug_SSL.ActiveCfg = Debug|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Debug_SSL.Build.0 = Debug|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Release.ActiveCfg = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Release.Build.0 = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.SSL.ActiveCfg = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.SSL.Build.0 = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Trace.ActiveCfg = Release|.NET
+		{7CD55379-5C17-4CCE-B5B7-B1908373917C}.Trace.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

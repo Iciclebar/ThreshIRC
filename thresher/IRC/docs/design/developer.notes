@@ -1,0 +1,27 @@
+How to build
+--------------
+Thresher requires NUnit (http://www.nunit.org) for testing.
+
+
+Overall Design
+-----------------
+Thresher's design is intentionally simple. It does not try to force a full-blown object model on top of
+the IRC protocol. Instead it is designed to function as a lightweight wrapper. There are only a 
+handful of key classes. First in importance is the Connection class which serves as a facade to 
+the command message builders (Sender & CtcpSender) and to the message parsers 
+( the 'Listener' classes ). The parsers also manage their own events. All the other classes 
+are simply support classes.
+
+
+Events
+---------
+Obviously, Thresher does not use customary Event signatures. They do not take 
+EventArgs objects.  Events map nicely to the asynchronous messages sent by IRC
+but their variety and quantity make it difficult to use a common EventArgs object.
+And the addition of an EventArgs object for each Event type would greatly increase the overall
+Size and complexity of Thresher while adding nothing to its capability.
+ 
+Thresher otherwise tries to conform to all the .Net/C# programming standards and has
+been run through the latest version of fxCop.
+
+
