@@ -124,8 +124,10 @@ namespace willIRC2
             //We have to catch errors in our delegates because Thresher purposefully
             //does not handle them for us. Exceptions will cause the library to exit if they are not
             //caught.
+            
             try
             {
+                AppendDelegate("Connected to Server");
                 //Don't need this anymore in this example but this can be left running
                 //if you want.
                 //Identd.Stop();
