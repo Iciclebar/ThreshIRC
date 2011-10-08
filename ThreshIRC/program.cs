@@ -50,6 +50,7 @@ namespace ThreshIRC
                 // to know when both forms are closed.
                 form1 = new SelectServer();
                 form1.Closed += new EventHandler(OnFormClosed);
+                ((Button)form1.Controls.Find("btnConnect", true)[0]).Click += this.btnConnect_Click;
                 formCount++;
 
                 form2 = new AppForm2();
@@ -59,6 +60,18 @@ namespace ThreshIRC
                 // Show both forms.
                 form1.Show();
                 form2.Show();
+            }
+
+
+            private void btnConnect_Click(object sender, EventArgs e)
+            {
+                Control frmOptions = ((Button)sender).Parent;
+                String address = ((TextBox)frmOptions.Controls.Find("txtAddress", true)[0]).Text;
+                String port = ((TextBox)frmOptions.Controls.Find("txtPort", true)[0]).Text;
+                
+                Server srv = new Server(address, port);
+                srv.Show();
+                ((Form)frmOptions).Close();
             }
 
             private void OnFormClosed(object sender, EventArgs e)

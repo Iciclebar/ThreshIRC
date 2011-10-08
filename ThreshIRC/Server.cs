@@ -11,9 +11,13 @@ namespace ThreshIRC
 {
     public partial class Server : Form
     {
+        public String server;
+        public int port;
         private Conn conn;
-        public Server()
+        public Server(String server, String port)
         {
+            this.server = server;
+            this.port = Convert.ToInt32(port);
             InitializeComponent();
         }
 
