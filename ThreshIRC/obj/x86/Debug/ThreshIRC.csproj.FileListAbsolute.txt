@@ -1,0 +1,14 @@
+C:\Users\Will\ThreshIRC\ThreshIRC\bin\Debug\ThreshIRC.exe
+C:\Users\Will\ThreshIRC\ThreshIRC\bin\Debug\ThreshIRC.pdb
+C:\Users\Will\ThreshIRC\ThreshIRC\bin\Debug\Org.Mentalis.Security.dll
+C:\Users\Will\ThreshIRC\ThreshIRC\bin\Debug\Sharkbite.Thresher.dll
+C:\Users\Will\ThreshIRC\ThreshIRC\bin\Debug\Org.Mentalis.Security.xml
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.Properties.Resources.resources
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.exe
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.pdb
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.SelectServer.resources
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.AppForm2.resources
+C:\Users\Will\ThreshIRC\ThreshIRC\obj\x86\Debug\ThreshIRC.Server.resources
