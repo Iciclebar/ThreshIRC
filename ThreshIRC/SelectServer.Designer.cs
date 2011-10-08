@@ -43,7 +43,8 @@
             this.lstServers.FormattingEnabled = true;
             this.lstServers.Items.AddRange(new object[] {
             "Dalnet- New York",
-            "TestEntry"});
+            "TestEntry",
+            "Rizon"});
             this.lstServers.Location = new System.Drawing.Point(11, 10);
             this.lstServers.Name = "lstServers";
             this.lstServers.Size = new System.Drawing.Size(124, 303);
@@ -109,7 +110,7 @@
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
             // 
-            // ServerSelect
+            // SelectServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +123,7 @@
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lstServers);
-            this.Name = "ServerSelect";
+            this.Name = "SelectServer";
             this.Text = "Select or Enter a Server";
             this.ResumeLayout(false);
             this.PerformLayout();

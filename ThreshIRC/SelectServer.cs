@@ -35,12 +35,27 @@ namespace ThreshIRC
                 txtPort.Text = "7000";
             }
 
+            else if (lstServers.SelectedIndex == 2)
+            {
+                txtAddress.Text = "irc.rizon.net";
+                txtPort.Text = "6667";
+            }
             else
             {
                 txtAddress.Text = "";
                 txtPort.Text = "";
 
             }
+        }
+
+        public String getSelectedServer()
+        {
+            return txtAddress.Text;
+        }
+
+        public int getSelectedPort()
+        {
+            return Convert.ToInt32(txtPort.Text);
         }
 
     }

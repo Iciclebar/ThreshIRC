@@ -53,8 +53,8 @@ namespace ThreshIRC
             //OnRegister tells us that we have successfully established a connection with
             //the server. Once this is established we can join channels, check for people
             //online, or whatever.
-            CreateConnection();
             this.guiForm = gui;
+            CreateConnection();
             connection.Listener.OnRegistered += new RegisteredEventHandler(OnRegistered);
 
             //Listen for any messages sent to the channel
