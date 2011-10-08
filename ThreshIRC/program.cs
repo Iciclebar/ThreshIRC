@@ -65,9 +65,10 @@ namespace ThreshIRC
 
             private void btnConnect_Click(object sender, EventArgs e)
             {
-                Control frmOptions = ((Button)sender).Parent;
-                String address = ((TextBox)frmOptions.Controls.Find("txtAddress", true)[0]).Text;
-                String port = ((TextBox)frmOptions.Controls.Find("txtPort", true)[0]).Text;
+                SelectServer frmOptions = (SelectServer)((Control)sender).Parent;
+
+                String address = frmOptions.getSelectedServer();
+                int port = frmOptions.getSelectedPort();
                 
                 Server srv = new Server(address, port);
                 srv.Show();

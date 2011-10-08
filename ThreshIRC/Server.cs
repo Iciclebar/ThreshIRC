@@ -14,10 +14,10 @@ namespace ThreshIRC
         public String server;
         public int port;
         private Conn conn;
-        public Server(String server, String port)
+        public Server(String server, int port)
         {
             this.server = server;
-            this.port = Convert.ToInt32(port);
+            this.port = port;
             InitializeComponent();
         }
 
