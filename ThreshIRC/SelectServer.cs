@@ -43,14 +43,5 @@ namespace ThreshIRC
             }
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-           
-            Server srv = new Server();
-            srv.Show();
-            this.Close();
-
-          
-        }
     }
 }

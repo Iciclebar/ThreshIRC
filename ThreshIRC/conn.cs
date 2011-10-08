@@ -74,11 +74,13 @@ namespace ThreshIRC
         private void CreateConnection()
         {
             Identd.Stop();
-            string server = "mozilla.se.eu.dal.net";
+            //string server = "mozilla.se.eu.dal.net";
+            string server = this.guiForm.server;
             string nick = "Will571";
             Identd.Start(nick);
             ConnectionArgs cargs = new ConnectionArgs(nick, server);
-            cargs.Port = 6665;
+            //cargs.Port = 6665;
+            cargs.Port = this.guiForm.port;
             connection = new Connection(cargs, false, false);
         }
 
